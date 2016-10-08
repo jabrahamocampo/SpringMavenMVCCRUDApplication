@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+  
+	<bean id="helloWorld" class="com.springtutorial.HelloWorld" init-method="init" destroy-method="destroy">
+		<property name="message" value="Vamos haciendolo bien! :-)"/>
+	</bean>
+	
+	<bean id="helloWorldSingleton" class="com.springtutorial.HelloWorld" scope="singleton">
+	</bean>
+	
+	<bean id="helloWorldPrototype" class="com.springtutorial.HelloWorld" scope="prototype">
+	</bean>
+	
+	<!-- Definition for textEditor bean-->
+	<bean id="textEditorConstructorDI" class="com.springtutorial.TextEditorConstructorDI">
+		<constructor-arg ref="spellChecker"/>
+	</bean>
+	
+	<!-- Definition for textEditor bean-->
+	<bean id="textEditorSetterDI" class="com.springtutorial.TextEditorSetterDI">
+		<property name="spellChecker" ref="spellChecker"/>
+	</bean>
+	
+	<bean id="TextEditorAutowirngBynamee" class="com.springtutorial.TextEditorAutowirngByname"
+		autowire="byName">
+		<property name="name" value="Generic Text Editor"/>	
+	</bean>
+	
+	<bean id="textEditorAutowiringByType" class="com.springtutorial.TextEditorAutowiringByType"
+		autowire="byType">
+		<property name="name" value="Generic Text Editor AutowiringByType"/>	
+	</bean>
+	
+	<bean id="textEditorAutowiringByConstructor" class="com.springtutorial.TextEditorAutowiringByConstructor"
+		autowire="constructor">
+		<constructor-arg value="Autowiring by constructor"/>
+	</bean>
+	
+	<!-- Definition for spellChecker bean-->
+	<bean id="spellChecker" class="com.springtutorial.SpellChecker">
+		<property name="versionName" value="Spell Checker Super Took" />
+		<property name="versionNumber" value="2.0" />
+	</bean>
+	
+	
+	<bean id="address1" class="com.springtutorial.Address">
+		<property name="street_name" value="Av canal interceptor" />
+	</bean>
+	
+	<bean id="address2" class="com.springtutorial.Address">
+		<property name="street_name" value="Av. Emiliano Zapata" />
+	</bean>
+	
+	
+	<!-- Definition for JavaCollection -->
+	<bean id="javaCollection" class="com.springtutorial.JavaCollection">
+		<!-- results in a setAddressList(java.util.List) call -->
+		<property name="addressList">
+			<list>
+				<value>Mexico</value>
+				<value>Canada</value>
+				<value>USA</value>
+				<value>Chile</value>
+				<ref bean="address1" />
+				
+			</list>
+		</property>	
+		
+		<!--  results in a setAddressSet(java.util.Set) call -->
+		 <property name="addressSet">
+			 <set>
+			 	<ref bean="address1" />  <!-- inyecting references -->
+			 <!--	<ref bean="address2" />  inyecting references -->
+				 <value>INDIA</value>
+				 <value>Pakistan</value>
+				 <value>USA</value>
+				 <value>USA</value>
+			 </set>
+		 </property>
+		
+		<!-- results in a setAddressMapp(java.util.Map) call -->
+		<property name="addressMap">
+			<map>
+				<entry key="1" value="Mexico" />
+				<entry key="2" value="Canada" />
+				<entry key="3" value="USA" />
+				<entry key="4" value="Chile" />
+				<entry key="5" value-ref="address1" />  <!-- inyecting references -->
+			<!--	<entry key="6" value-ref="address2" />   inyecting references -->
+			</map>
+		</property>	
+		
+		<!--  results in a setAddressProp(java.util.Properties) call -->
+		 <property name="addressProp">
+			 <props>
+				 <prop key="one">INDIA</prop>
+				 <prop key="two">Pakistan</prop>
+				 <prop key="three">USA</prop>
+		 		<prop key="four">USA</prop>
+		 	</props>
+		 </property>
+	</bean>
+	
+	
+	<!-- 
+			******A simple bean definition****** 
+	<bean id="" class="">
+	</bean>
+	
+			******A bean definition with lazy-init******
+	<bean id="" class="" lazy-init="true">
+	</bean>
+	
+			******A bean definition with initialization method******
+	<bean id="" class="" init-method="">
+	</bean>
+	
+			******A bean definition with destruction method******
+	<bean id="" class="" destroy-method="">
+	</bean>				
+	-->
+		
+</beans>
