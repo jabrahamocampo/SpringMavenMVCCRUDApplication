@@ -9,6 +9,18 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
  
  <context:annotation-config/>
  
+ <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost/emp" />
+		<property name="username" value="root" />
+		<property name="password" value="" />
+ </bean>
+ 
+ <!-- Definition for studentDAOImplementation bean -->
+ <bean id="studentDAOImplementation" class="com.springtutorial.jdbc.StudentDAOImplement">
+ 	<property name="dataSource" ref="dataSource"/>
+ </bean>
+ 
  <bean id="student" class="com.springtutorial.annotation.Student">
  	<property name="name" value="Jose Abraham" />
  	<property name="age" value="37" />
@@ -21,5 +33,12 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
  	<bean id="textEditorAutowireConstructor" class="com.springtutorial.annotation.TextEditorAutowiredConstructor"></bean>
  	
  	<bean id="spellChecker" class="com.springtutorial.SpellChecker"></bean>
+ 	
+ 	<bean id="helloWorld" class="com.springtutorial.configurationandbean.HelloWorld">
+ 		<property name="message" value="Hello World!"/>
+ 	</bean>
+ 	
+ 	<bean id="cStartEventHandler" class="com.springtutorial.configurationandbean.CStartEventHandler" />
+ 	<bean id="cStopEventHandler" class="com.springtutorial.configurationandbean.CStopEventHandler" /> 
  	
 </beans>

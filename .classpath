@@ -22,5 +22,7 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/joseo_000/Personal/spring-framework-4.1.6/libs/org.springframework.jdbc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/joseo_000/Personal/spring-framework-4.1.6/libs/org.springframework.transaction.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

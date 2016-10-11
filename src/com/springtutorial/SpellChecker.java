@@ -6,10 +6,11 @@ public class SpellChecker {
 	private String versionNumber;
 	
 	public SpellChecker(){
-		System.out.println("Inside SpellChecker constructor");
+		System.out.println("Inside SpellChecker constructor*****");
 	}
 	
 	public String getVersionName() {
+		System.out.println("Your Message : " + versionName);
 		return versionName;
 	}
 

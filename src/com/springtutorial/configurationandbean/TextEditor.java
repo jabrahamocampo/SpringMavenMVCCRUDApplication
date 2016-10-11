@@ -4,7 +4,7 @@ import com.springtutorial.SpellChecker;
 
 public class TextEditor {
 	
-	private SpellChecker spellChecker;
+	public SpellChecker spellChecker;
 	
 	public TextEditor(SpellChecker spellChecker){
 		System.out.println("Inside text editor constructor");
