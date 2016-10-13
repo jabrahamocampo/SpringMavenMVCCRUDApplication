@@ -19,11 +19,13 @@ com\springtutorial\annotation\Student.class
 com\springtutorial\annotation\TextEditorAutoWiredSetter.class
 com\springtutorial\annotation\TextEditorAutowiredConstructor.class
 com\springtutorial\mvc\Student.class
+com\springmvcmaven\dao\StudentService.class
 com\springtutorial\TextEditorAutowiringByConstructor.class
 com\springtutorial\annotation\MainAppTextEditorAutoWiredSetter.class
 com\springtutorial\configurationandbean\TextEditorConfig.class
 com\springtutorial\TextEditorAutowirngByname.class
 com\springtutorial\configurationandbean\MainAppEventHandler.class
+com\springmvcmaven\domain\Student.class
 com\springmvcmaven\controller\StudentController.class
 com\springtutorial\jdbc\StudentMapper.class
 com\springtutorial\configurationandbean\MainAppTextEditor.class

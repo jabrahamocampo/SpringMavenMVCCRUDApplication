@@ -21,7 +21,7 @@ prefix="form"%>
  </tr>
   <tr>
  <td>message</td>
- <td>${hellomessage} </td>
+ <td>${message} </td>
  </tr>
 </table>
 </body>
